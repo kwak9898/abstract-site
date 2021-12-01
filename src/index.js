@@ -1,10 +1,17 @@
-class Site {}
+class Site {
+    constructor() {
+        this.boards = [];
+    }
+    addBoard(board) {
+        this.boards.push(board);
+    }
+}
 
-class Board {}
+class Board { }
 
-class Article {}
+class Article { }
 
-class Comment {}
+class Comment { }
 
 module.exports = {
     Site,
