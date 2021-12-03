@@ -1,35 +1,34 @@
 class Site {
     constructor() {
-        this.boards = [];
+        this.boards = []
     }
     addBoard(board) {
         if (this.boards.find((boardInfo) => boardInfo.name === board.name)) {
             throw Error()
         }
-        board.myboard = true
-        this.boards.push(board);
+        board.myBoard = true
+        this.boards.push(board)
     }
     findBoardByName(name) {
-        return this.boards.find((board) => board.name === name)
+        return this.boards.find((board) => board.name = name)
     }
 }
 
 class Board {
     constructor(name) {
-        if (name == null || name == "") {
+        if (name === null || name === "") {
             throw Error()
         }
         this.name = name
-        this.myboard = false
+        this.myBoard = false
         this.articles = []
     }
     publish(article) {
-        if (this.myboard == false) {
+        if (this.myBoard == false) {
             throw Error()
         }
         article.id = `${this.name}-${Math.random()}`
         article.createdDate = new Date().toISOString()
-
         this.articles.push(article)
     }
     getAllArticles() {
@@ -39,12 +38,10 @@ class Board {
 
 class Article {
     constructor(article) {
-        let { subject, content, author } = article
-
-        if (subject == null || subject == "" || content == null || content == "" || author == null || author == "") {
-            throw Error();
+        const { subject, content, author } = article
+        if (subject === null || subject === "" || content === null || content === "" || author === null || author === "") {
+            throw Error()
         }
-
         this.subject = subject
         this.content = content
         this.author = author
@@ -64,12 +61,12 @@ class Article {
 
 class Comment {
     constructor(comment) {
-        let { content, author } = comment
-        if (content == null || content == "" || author == null || author == "") {
+        const { content, author } = comment
+        if (content === null || content === "" || author === null || author === "") {
             throw Error()
         }
-        this.content
-        this.author
+        this.content = content
+        this.author = author
     }
 }
 
